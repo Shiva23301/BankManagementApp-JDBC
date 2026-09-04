@@ -13,8 +13,10 @@ public class Connector {
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			String user = "root";
-			String password = "sHiv@#1234#@";
+			String user =
+					System.getenv("DB_USERNAME");
+			String password =
+					System.getenv("DB_PASSWORD");
 			String url = "jdbc:mysql://localhost:3306/bank_management";
 
 			con = DriverManager.getConnection(url, user, password);
